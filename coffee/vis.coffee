@@ -15,36 +15,50 @@ PropertyData = () ->
       max:4500000
       values:[3000,20500]
       ticks:[3000,8000,13000,20500,30500,46500,65000,100000,150000,280000,4500000]
+      prefix:""
+      suffix:""
     "government_leased":
       min:0
       max:100
       values:[30,70]
       ticks:[0,10,20,30,40,50,60,70,80,90,100]
+      prefix:""
+      suffix:"%"
     "government_rsf":
       min:3000
       max:2400000
       values:[3000,2400000]
       ticks:[3000,4500,6000,7500,9500,12000,16000,23000,38000,78000,2400000]
+      prefix:""
+      suffix:""
     "remaining_total_term":
       min:0
       max:20
       values:[0,6]
       ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      prefix:""
+      suffix:""
     "remaining_firm_term":
       min:0
       max:20
       values:[0,10]
       ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      prefix:""
+      suffix:""
     "total_rent":
       min:0
       max:71511980
       values:[0,71511980]
       ticks:[0,700000,1400000, 2100000, 2800000, 3500000, 4200000, 4900000, 5600000, 6300000, 7400000, 71511980]
+      prefix:"$"
+      suffix:""
     "rent_prsf":
       min:0
       max:250
       values:[0,250]
       ticks:[0,25,50,75,100,125,150,175,200,225,250]
+      prefix:""
+      suffix:""
   }
 
   clean = (rawData) ->
@@ -107,7 +121,7 @@ PropertyData = () ->
         .enter().append("option")
         .attr("value", (d) -> d)
         .attr("selected", (d) -> if entry.value.values[0] == d then "selected" else null)
-        .text((d) -> fixUp(d))
+        .text((d) -> entry.value.prefix + fixUp(d) + entry.value.suffix)
 
       selecter = d3.select(sliderId)
         .append("select")
@@ -307,11 +321,11 @@ $ ->
     filteredData = my_data.data()
     $("#metric_locations").text(addCommas(filteredData.length))
     $("#metric_rsf").text(fixUp(my_data.total_rsf()))
-    $("#metric_cap_value").text(fixUp(my_data.total_cap_value()))
+    root.updateCap()
     my_map.update(filteredData)
 
   root.updateCap = () ->
-    $("#metric_cap_value").text(fixUp(my_data.total_cap_value()))
+    $("#metric_cap_value").text("$"+fixUp(my_data.total_cap_value()))
 
   $(root).bind('filterupdate', update)
 
