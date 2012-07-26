@@ -6,7 +6,7 @@ PropertyData = () ->
   all = null
   dimensions = {}
   cap_rate = 0.04
-  op_expense = 0.3
+  op_expense = 0.2
   all_rents = []
 
   filterData = {
