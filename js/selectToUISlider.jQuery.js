@@ -25,7 +25,8 @@ jQuery.fn.selectToUISlider = function(settings){
 		tooltipSrc: 'text',//accepts 'value' as well
 		labelSrc: 'value',//accepts 'value' as well	,
 		sliderOptions: null,
-    callback: false
+    callback: false,
+    every: 4
 	}, settings);
 
 
@@ -189,7 +190,7 @@ jQuery.fn.selectToUISlider = function(settings){
 	else {
 		var scale = sliderComponent.append('<ol class="ui-slider-scale ui-helper-reset" role="presentation"></ol>').find('.ui-slider-scale:eq(0)');
 		jQuery(selectOptions).each(function(i){
-			var style = (i == selectOptions.length-1 || i == 0) ? 'style="display: none;"' : '' ;
+			var style = (i == selectOptions.length-1 || i == 0 || (i % options.every) != 0) ? 'style="display: none;"' : '' ;
 			var labelText = (options.labelSrc == 'text') ? this.text : this.value;
 			scale.append('<li style="left:'+ leftVal(i) +'"><span class="ui-slider-label">'+ labelText +'</span><span class="ui-slider-tic ui-widget-content"'+ style +'></span></li>');
 		});

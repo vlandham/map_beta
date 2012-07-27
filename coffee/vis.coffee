@@ -13,50 +13,57 @@ PropertyData = () ->
     "building_rsf":
       min:3000
       max:4500000
-      values:[3000,20500]
-      ticks:[3000,8000,13000,20500,30500,46500,65000,100000,150000,280000,4500000]
+      values:[3000,20328]
+      # ticks:[3000,8000,13000,20500,30500,46500,65000,100000,150000,280000,4500000]
+      ticks:[3000, 4810, 5997, 7014, 8000, 9055, 10137, 11413, 12705, 14306, 16198, 18271, 20328, 22632, 25000, 28129, 30381, 33717, 37192, 41752, 46256, 50466, 55000, 59931, 64653, 72326, 80000, 89619, 100000, 108927, 121503, 135530, 152252, 175375, 202942, 235050, 279112, 335695, 422507, 578662, 4500000]
       prefix:""
       suffix:""
     "government_leased":
       min:0
       max:100
       values:[30,70]
-      ticks:[0,10,20,30,40,50,60,70,80,90,100]
+      # ticks:[0,10,20,30,40,50,60,70,80,90,100]
+      ticks:[0, 2.5, 5, 7.5, 10, 12.5, 15, 17.5, 20, 22.5, 25, 27.5, 30, 32.5, 35, 37.5, 40, 42.5, 45, 47.5, 50, 52.5, 55, 57.5, 60, 62.5, 65, 67.5, 70, 72.5, 75, 77.5, 80, 82.5, 85, 87.5, 90, 92.5, 95, 97.5, 100]
       prefix:""
       suffix:"%"
     "government_rsf":
       min:3000
       max:2400000
-      values:[3000,2400000]
-      ticks:[3000,4500,6000,7500,9500,12000,16000,23000,38000,78000,2400000]
+      values:[3000,38000]
+      # ticks:[3000,4500,6000,7500,9500,12000,16000,23000,38000,78000,2400000]
+      ticks:[3000, 3381, 3749, 4077, 4420, 4841, 5161, 5569, 5992, 6340, 6811, 7220, 7609, 8050, 8552, 9068, 9600, 10086, 10722, 11479, 12116, 12977, 13975, 14957, 16232, 17654, 19214, 21063, 23162, 25648, 29336, 33291, 38000, 45386, 53043, 63920, 78018, 99155, 134027, 217171, 2386940]
       prefix:""
       suffix:""
     "remaining_total_term":
       min:0
       max:20
       values:[0,6]
-      ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      # ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      ticks:[0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20]
       prefix:""
       suffix:""
     "remaining_firm_term":
       min:0
       max:20
       values:[0,10]
-      ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      # ticks:[0,2,4,6,8,10,12,14,16,18,20]
+      ticks:[0, 0.5, 1, 1.5, 2, 2.5, 3, 3.5, 4, 4.5, 5, 5.5, 6, 6.5, 7, 7.5, 8, 8.5, 9, 9.5, 10, 10.5, 11, 11.5, 12, 12.5, 13, 13.5, 14, 14.5, 15, 15.5, 16, 16.5, 17, 17.5, 18, 18.5, 19, 19.5, 20]
       prefix:""
       suffix:""
     "total_rent":
       min:0
       max:71511980
       values:[0,71511980]
-      ticks:[0,700000,1400000, 2100000, 2800000, 3500000, 4200000, 4900000, 5600000, 6300000, 7400000, 71511980]
+      # ticks:[0,700000,1400000, 2100000, 2800000, 3500000, 4200000, 4900000, 5600000, 6300000, 7400000, 71511980]
+      ticks:[0, 53708, 67858, 78443, 88442, 97116, 105644, 113907, 123562, 132434, 144852, 154784, 168900, 180573, 192898, 206924, 221634, 238924, 255005, 273329, 297825, 318896, 344745, 373107, 405162, 439359, 482688, 527748, 585045, 651704, 732091, 832861, 977582, 1166531, 1410049, 1709484, 2127426, 2608457, 3389545, 6295542, 71511980]
       prefix:"$"
       suffix:""
     "rent_prsf":
       min:0
       max:250
       values:[0,250]
-      ticks:[0,25,50,75,100,125,150,175,200,225,250]
+      # ticks:[0,25,50,75,100,125,150,175,200,225,250]
+      ticks:[0, 6, 12, 18, 24, 30, 36, 42, 48, 54, 60, 66, 72, 78, 84, 90, 96, 102, 108, 114, 120, 126, 132, 138, 144, 150, 156, 162, 168, 174, 180, 186, 192, 198, 204, 210, 216, 222, 230, 240, 250]
       prefix:""
       suffix:""
   }
@@ -93,13 +100,25 @@ PropertyData = () ->
       nums = data.map (d) -> d[field]
       # console.log(nums)
       nums.sort( d3.ascending)
-      [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0].forEach (i) ->
-        q = d3.quantile(nums,i)
-        console.log(" #{i}: #{q}")
+      quants = []
+      for x in [0..40] by 1
+        val = x / 40.0
+        quants.push val
+      # [0.0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1.0].forEach (i) ->
+      vals = []
+      quants.forEach (i) ->
+        q = Math.round(d3.quantile(nums,i))
+        vals.push q
+      console.log(vals)
 
     data
 
   pdata = (rawData) ->
+    # vals = []
+    # for x in [0..250] by 6
+    #   vals.push x
+    # console.log(vals)
+    # console.log(vals.length)
     rawData = clean(rawData)
     # rawData = stats(rawData)
     data = crossfilter(rawData)
@@ -299,7 +318,7 @@ USMap = () ->
     content +="<span class=\"name\">Lease RSF:</span><span class=\"value\"> #{fixUp(data.total_leased_rsf)}</span><br/>"
     content +="<span class=\"name\">% Govt Leased:</span><span class=\"value\"> %#{fixUp(data.percent_govt_leased)}</span><br/>"
     content +="<span class=\"name\">Rent/RSF:</span><span class=\"value\"> #{fixUp(data.rent_prsf)}</span><br/>"
-    content +="<span class=\"name\">Lease Exp:</span><span class=\"value\"> #{fixUp(data.remaining_firm_term)}</span><br/>"
+    content +="<span class=\"name\">Remaining Term (Yrs):</span><span class=\"value\"> #{fixUp(data.remaining_total_term)}</span><br/>"
     tooltip.showTooltip(content,d3.event)
 
   hide_details = (data, i, element) =>
@@ -361,12 +380,14 @@ $ ->
   $("#select_op_expense").selectToUISlider({
     labels:0
     callback:'set_op_expense'
+    every:1
   })
   $(root).bind('set_op_expense', setOpExpense)
 
   $("#select_cap_rate").selectToUISlider({
     labels:0
     callback:'set_cap_rate'
+    every:1
   })
   $(root).bind('set_cap_rate', setCapRate)
 
