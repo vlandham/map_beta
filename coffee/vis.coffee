@@ -197,11 +197,18 @@ PropertyData = () ->
     else
       0
 
+  calculate_cap = (rent) ->
+        noi = rent - (rent * op_expense)
+        noi / cap_rate
+
+  pdata.cap_value_extent = () ->
+    [calculate_cap(all_rents[0]), calculate_cap(all_rents[all_rents.length - 1])]
+
+
   pdata.total_cap_value = () ->
     if all
       all.reduceSum((d) ->
-        noi = d.total_annual_rent - (d.total_annual_rent * op_expense)
-        noi / cap_rate
+        calculate_cap(d.total_annual_rent)
       ).value()
     else
       0
@@ -326,6 +333,9 @@ $ ->
 
   root.updateCap = () ->
     $("#metric_cap_value").text("$"+fixUp(my_data.total_cap_value()))
+    cap_extent = my_data.cap_value_extent()
+    $("#label_cap_value_start").text("$"+fixUp(cap_extent[0]))
+    $("#label_cap_value_end").text("$"+fixUp(cap_extent[1]))
 
   $(root).bind('filterupdate', update)
 
