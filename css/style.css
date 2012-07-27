@@ -77,6 +77,24 @@
   /* margin-left: 4px; */
 }
 
+.slider_label_start {
+  width: 39px;
+  text-align:right;
+}
+
+.slider_label_end {
+  width: 43px;
+}
+
+.mini_slider_section .slider_label_start {
+  width: 20px;
+  text-align:right;
+}
+
+.mini_slider_section .slider_label_end {
+  width: 28px;
+}
+
 .background {
   fill: none;
   pointer-events: all;
@@ -129,7 +147,7 @@ circle.active {
 
 .tooltip p.main {
   font-size: 15px;
-  text-align: center;
+  text-align: left;
   padding:0;
   margin:0;
 }

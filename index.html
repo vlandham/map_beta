@@ -57,23 +57,23 @@
           <div id="mini_sliders">
             <div class="mini_slider_section">
               <h4>% Operating Expenses</h4>
-              <div class="slider_label">0%</div>
+              <div class="slider_label slider_label_start">0%</div>
               <div id="slider_op_expense" class="mini_slider">
                 <select id="select_op_expense" style="display:none;">
                   <option value="0">0%</option>
+                  <option value="0.05">5%</option>
                   <option value=".10">10%</option>
+                  <option value=".15">15%</option>
                   <option value=".20" selected="selected">20%</option>
+                  <option value=".25" >25%</option>
                   <option value=".30">30%</option>
+                  <option value=".35">35%</option>
                   <option value=".40">40%</option>
+                  <option value=".45">45%</option>
                   <option value=".50">50%</option>
-                  <option value=".60">60%</option>
-                  <option value=".70">70%</option>
-                  <option value=".80">80%</option>
-                  <option value=".90">90%</option>
-                  <option value="1.00">100%</option>
                 </select>
               </div>
-              <div class="slider_label">100%</div>
+              <div class="slider_label slider_label_end">50%</div>
               <div class="slider_question">
                 <i class="icon-question-sign" title="% Operating Expenses Help"></i>
               </div>
@@ -110,9 +110,9 @@
             <h3>Building RSF</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">3,000</div>
+            <div class="slider_label slider_label_start">3,000</div>
             <div class="slider" id="slider_building_rsf"></div>
-            <div class="slider_label">4.5M</div>
+            <div class="slider_label slider_label_end">4.5M</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -123,9 +123,9 @@
             <h3>% Government Leased</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">0%</div>
+            <div class="slider_label slider_label_start">0%</div>
             <div class="slider" id="slider_government_leased"></div>
-            <div class="slider_label">100%</div>
+            <div class="slider_label slider_label_end">100%</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -136,9 +136,9 @@
             <h3>Government Leased RSF</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">3,000</div>
+            <div class="slider_label slider_label_start">3,000</div>
             <div class="slider" id="slider_government_rsf"></div>
-            <div class="slider_label">2.4M</div>
+            <div class="slider_label slider_label_end">2.4M</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -149,9 +149,9 @@
             <h3>Remaining Total Term (Yrs)</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">0</div>
+            <div class="slider_label slider_label_start">0</div>
             <div class="slider" id="slider_remaining_total_term"></div>
-            <div class="slider_label">20</div>
+            <div class="slider_label slider_label_end">20</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -162,9 +162,9 @@
             <h3>Remaining Firm Term (Yrs)</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">0</div>
+            <div class="slider_label slider_label_start">0</div>
             <div class="slider" id="slider_remaining_firm_term"></div>
-            <div class="slider_label">20</div>
+            <div class="slider_label slider_label_end">20</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -175,9 +175,9 @@
             <h3>Total Rent</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">$0</div>
+            <div class="slider_label slider_label_start">$0</div>
             <div class="slider" id="slider_total_rent"></div>
-            <div class="slider_label">$71.5M</div>
+            <div class="slider_label slider_label_end">$71.5M</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>
@@ -188,22 +188,9 @@
             <h3>Rent PRSF</h3>
           </div>
           <div class="span7">
-            <div class="slider_label">0</div>
+            <div class="slider_label slider_label_start">0</div>
             <div class="slider" id="slider_rent_prsf"></div>
-            <div class="slider_label">250</div>
-            <div class="slider_question">
-              <i class="icon-question-sign"></i>
-            </div>
-          </div>
-        </div>
-        <div class="row">
-          <div class="span4">
-            <h3>Capitalized Value</h3>
-          </div>
-          <div class="span7">
-            <div class="slider_label" id="label_cap_value_start"></div>
-            <div class="slider" id="slider_capitalized_value"></div>
-            <div class="slider_label" id="label_cap_value_end"></div>
+            <div class="slider_label slider_label_end">250</div>
             <div class="slider_question">
               <i class="icon-question-sign"></i>
             </div>

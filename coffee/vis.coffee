@@ -7,7 +7,7 @@ PropertyData = () ->
   dimensions = {}
   cap_rate = 0.04
   op_expense = 0.2
-  all_rents = []
+  # all_rents = []
 
   filterData = {
     "building_rsf":
@@ -168,7 +168,7 @@ PropertyData = () ->
     dimensions.total_rent = data.dimension (d) -> d.total_annual_rent
     dimensions.rent_prsf = data.dimension (d) -> d.rent_prsf
 
-    all_rents = dimensions.total_rent.top(Infinity).map((d) -> d.total_annual_rent).reverse()
+    # all_rents = dimensions.total_rent.top(Infinity).map((d) -> d.total_annual_rent).reverse()
 
     d3.entries(filterData).forEach (entry) ->
       dimensions[entry.key].filter(entry.value.values)
@@ -201,8 +201,8 @@ PropertyData = () ->
         noi = rent - (rent * op_expense)
         noi / cap_rate
 
-  pdata.cap_value_extent = () ->
-    [calculate_cap(all_rents[0]), calculate_cap(all_rents[all_rents.length - 1])]
+  # pdata.cap_value_extent = () ->
+  #   [calculate_cap(all_rents[0]), calculate_cap(all_rents[all_rents.length - 1])]
 
 
   pdata.total_cap_value = () ->
@@ -295,9 +295,11 @@ USMap = () ->
 
   show_details = (data, i, element) =>
     d3.select(element).classed("active", true)
-    content = "<p class=\"main\">#{data.address}<br/>#{data.city}, #{data.state}</p><hr class=\"tooltip-hr\">"
-    content +="<span class=\"name\">RSF:</span><span class=\"value\"> #{fixUp(data.bldg_rsf)}</span><br/>"
-    content +="<span class=\"name\">Rent:</span><span class=\"value\"> #{data.rent_prsf}/RSF</span><br/>"
+    content = "<p class=\"main\">#{data.city}, #{data.state}</p><hr class=\"tooltip-hr\">"
+    content +="<span class=\"name\">Lease RSF:</span><span class=\"value\"> #{fixUp(data.total_leased_rsf)}</span><br/>"
+    content +="<span class=\"name\">% Govt Leased:</span><span class=\"value\"> %#{fixUp(data.percent_govt_leased)}</span><br/>"
+    content +="<span class=\"name\">Rent/RSF:</span><span class=\"value\"> #{fixUp(data.rent_prsf)}</span><br/>"
+    content +="<span class=\"name\">Lease Exp:</span><span class=\"value\"> #{fixUp(data.remaining_firm_term)}</span><br/>"
     tooltip.showTooltip(content,d3.event)
 
   hide_details = (data, i, element) =>
@@ -333,9 +335,9 @@ $ ->
 
   root.updateCap = () ->
     $("#metric_cap_value").text("$"+fixUp(my_data.total_cap_value()))
-    cap_extent = my_data.cap_value_extent()
-    $("#label_cap_value_start").text("$"+fixUp(cap_extent[0]))
-    $("#label_cap_value_end").text("$"+fixUp(cap_extent[1]))
+    # cap_extent = my_data.cap_value_extent()
+    # $("#label_cap_value_start").text("$"+fixUp(cap_extent[0]))
+    # $("#label_cap_value_end").text("$"+fixUp(cap_extent[1]))
 
   $(root).bind('filterupdate', update)
 
