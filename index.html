@@ -43,15 +43,24 @@
             </div>
             <div class="metric_value" id="metric_locations">
             </div>
+            <div class="metric_question">
+              <i class="icon-question-sign" title="Number of GSA-leased buildings that meet the investment criteria"></i>
+            </div>
             <div class="metric_title">
               <h3>Total RSF</h3>
             </div>
             <div class="metric_value" id="metric_rsf">
             </div>
+            <div class="metric_question">
+              <i class="icon-question-sign" title="Square footage of GSA leases (not total buildings) that meets investment criteria"></i>
+            </div>
             <div class="metric_title">
               <h3>Capitalized Value</h3>
             </div>
             <div class="metric_value" id="metric_cap_value">
+            </div>
+            <div class="metric_question">
+              <i class="icon-question-sign" title="Capitalized value is computed based upon GSA Lease RSF only"></i>
             </div>
           </div>
           <div id="mini_sliders">
@@ -75,7 +84,7 @@
               </div>
               <div class="slider_label slider_label_end">50%</div>
               <div class="slider_question">
-                <i class="icon-question-sign" title="% Operating Expenses Help"></i>
+                <i class="icon-question-sign" title="Set operating expense portion of GSA full-service leases to calculate Capitalized Value above"></i>
               </div>
             </div>
             <div class="mini_slider_section">
@@ -83,11 +92,11 @@
               <div class="slider_label">4%</div>
               <div id="slider_cap_rate" class="mini_slider">
                 <select id="select_cap_rate" style="display:none;">
-                  <option value="0.04" selected="selected">4%</option>
+                  <option value="0.04">4%</option>
                   <option value="0.05">5%</option>
                   <option value="0.06">6%</option>
                   <option value="0.07">7%</option>
-                  <option value="0.08">8%</option>
+                  <option value="0.08"selected="selected">8%</option>
                   <option value="0.09">9%</option>
                   <option value="0.10">10%</option>
                   <option value="0.11">11%</option>
@@ -98,7 +107,7 @@
               </div>
               <div class="slider_label">14%</div>
               <div class="slider_question">
-                <i class="icon-question-sign"></i>
+                <i class="icon-question-sign" title="Set cap rate assumption to determine Capitalized Value above"></i>
               </div>
             </div>
           </div>
@@ -114,7 +123,7 @@
             <div class="slider" id="slider_building_rsf"></div>
             <div class="slider_label slider_label_end">4.5M</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Building size (scale is in quantiles)"></i>
             </div>
           </div>
         </div>
@@ -127,7 +136,7 @@
             <div class="slider" id="slider_government_leased"></div>
             <div class="slider_label slider_label_end">100%</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="% of GSA occupancy per building"></i>
             </div>
           </div>
         </div>
@@ -140,7 +149,7 @@
             <div class="slider" id="slider_government_rsf"></div>
             <div class="slider_label slider_label_end">2.4M</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Aggregate amount of GSA leased RSF per building (scale is in quantiles)"></i>
             </div>
           </div>
         </div>
@@ -153,7 +162,7 @@
             <div class="slider" id="slider_remaining_total_term"></div>
             <div class="slider_label slider_label_end">20</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Weighted average remaining lease term"></i>
             </div>
           </div>
         </div>
@@ -166,7 +175,7 @@
             <div class="slider" id="slider_remaining_firm_term"></div>
             <div class="slider_label slider_label_end">20</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Weighted average non-cancellable remaining lease term (0 indicates lease is cancelable now)"></i>
             </div>
           </div>
         </div>
@@ -179,7 +188,7 @@
             <div class="slider" id="slider_total_rent"></div>
             <div class="slider_label slider_label_end">$71.5M</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Aggregate GSA rent per building (scale is in quantiles)"></i>
             </div>
           </div>
         </div>
@@ -190,9 +199,9 @@
           <div class="span7">
             <div class="slider_label slider_label_start">0</div>
             <div class="slider" id="slider_rent_prsf"></div>
-            <div class="slider_label slider_label_end">250</div>
+            <div class="slider_label slider_label_end">90</div>
             <div class="slider_question">
-              <i class="icon-question-sign"></i>
+              <i class="icon-question-sign" title="Weighted average GSA rent/SF per building"></i>
             </div>
           </div>
         </div>

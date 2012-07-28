@@ -64,6 +64,12 @@
   margin-left: 4px;
 }
 
+.metric_question {
+  float:right;
+  margin-right: 4px;
+  margin-top: -20px;
+}
+
 .slider {
   width: 75%;
   float: left;
