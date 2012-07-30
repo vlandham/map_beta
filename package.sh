@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
- 
+
 NAME="gsa_map"
- 
+
 rm -rf $NAME
 rm -rf $NAME.zip
 mkdir -p $NAME
