@@ -100,7 +100,7 @@ PropertyData = () ->
 
     fields.forEach (field) ->
       ext = d3.extent(data, (d) -> d[field])
-      console.log("#{field}: #{ext[0]} - #{ext[1]}")
+      # console.log("#{field}: #{ext[0]} - #{ext[1]}")
       nums = data.map (d) -> d[field]
       # console.log(nums)
       nums.sort( d3.ascending)
@@ -113,7 +113,7 @@ PropertyData = () ->
       quants.forEach (i) ->
         q = Math.round(d3.quantile(nums,i) /10) * 10
         vals.push q
-      console.log(vals)
+      # console.log(vals)
 
     data
 
@@ -323,7 +323,7 @@ USMap = () ->
     content = "<p class=\"main\">#{data.city}, #{data.state}</p><hr class=\"tooltip-hr\">"
     content +="<span class=\"name\">Lease RSF:</span><span class=\"value\"> #{fixUp(data.total_leased_rsf)}</span><br/>"
     content +="<span class=\"name\">% Govt Leased:</span><span class=\"value\"> #{fixUp(data.percent_govt_leased)}%</span><br/>"
-    content +="<span class=\"name\">Rent/RSF:</span><span class=\"value\"> #{fixUp(data.rent_prsf)}</span><br/>"
+    content +="<span class=\"name\">Rent/RSF:</span><span class=\"value\"> $#{fixUp(data.rent_prsf)}</span><br/>"
     content +="<span class=\"name\">Remaining Term (Yrs):</span><span class=\"value\"> #{fixUp(data.remaining_total_term)}</span><br/>"
     tooltip.showTooltip(content,d3.event)
 
@@ -398,7 +398,8 @@ $ ->
   $(root).bind('set_cap_rate', setCapRate)
 
 
-  $(".icon-question-sign").tipsy({gravity:'s'})
+  # $(".icon-question-sign").tipsy({gravity:'s'})
+  $(".icon-question-sign").tooltip()
 
 
   display = (data) ->

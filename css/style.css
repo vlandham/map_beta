@@ -2,6 +2,7 @@
 #container {
   padding-top: 15px;
   margin: auto;
+  width: 960px;
 }
 
 #map {
@@ -135,7 +136,7 @@ circle.active {
 }
 
 
-.tooltip {
+#map_tooltip {
     position: absolute;
     top: 100px;
     left: 100px;
@@ -151,7 +152,7 @@ circle.active {
     z-index: 120;
 }
 
-.tooltip p.main {
+#map_tooltip p.main {
   font-size: 15px;
   text-align: left;
   padding:0;
@@ -163,13 +164,19 @@ hr.tooltip-hr {
   margin:3px 0 3px 0;
 }
  
-.tooltip .title {
+#map_tooltip .title {
     font-size: 20px;
     line-height: 24px;
 }
  
-.tooltip .name {
+#map_tooltip .name {
   font-weight:bold;
 }
 
+.tooltip {
+  width: 240px;
+}
 
+.tooltip-inner {
+  text-align: left;
+}
